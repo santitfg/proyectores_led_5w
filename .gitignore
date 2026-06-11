@@ -1,0 +1,30 @@
+# .gitignore para proyectores_led_5w
+# Ignorar archivos generados de compilación y archivos 'mc'
+
+# Artefactos de compilación comunes (Arduino / MCU)
+*.elf
+*.hex
+*.bin
+*.eep
+*.map
+*.sym
+*.lst
+
+# Carpetas de build / PlatformIO
+build/
+*/build/
+.pio/
+.pioenvs/
+
+# Archivos y carpetas relacionados con 'mc'
+mc/
+*.mc
+
+# Archivos temporales y del sistema
+.DS_Store
+*~
+*.swp
+
+# IDEs/editors
+.vscode/
+.idea/
