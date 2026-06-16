@@ -1,7 +1,24 @@
 # .gitignore para proyectores_led_5w
-# Ignorar archivos generados de compilación y archivos 'mc'
 
-# Artefactos de compilación comunes (Arduino / MCU)
+# ── KiCad ──────────────────────────────────────────
+# Backups automáticos
+*-backups/
+*.kicad_pcb-bak
+*.bak
+*.000
+
+# Archivos de bloqueo y caché
+*.lck
+fp-info-cache
+
+# Outputs de fabricación (opcional, ignorar si no los versionás)
+gerbers/
+*.gbr
+*.drl
+*.pos
+*.rpt
+
+# ── Build / MCU ─────────────────────────────────────
 *.elf
 *.hex
 *.bin
@@ -9,22 +26,16 @@
 *.map
 *.sym
 *.lst
-
-# Carpetas de build / PlatformIO
 build/
 */build/
 .pio/
 .pioenvs/
-
-# Archivos y carpetas relacionados con 'mc'
 mc/
 *.mc
 
-# Archivos temporales y del sistema
+# ── Sistema / IDE ───────────────────────────────────
 .DS_Store
 *~
 *.swp
-
-# IDEs/editors
 .vscode/
 .idea/
