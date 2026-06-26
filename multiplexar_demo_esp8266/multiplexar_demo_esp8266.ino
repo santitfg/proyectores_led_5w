@@ -40,10 +40,16 @@
  *   final del archivo).
  */
 
-// ── Pines 74HC595 ──────────────────────────────────────────────
-#define PIN_DATA   13   // DS - en el chip pata 14
-#define PIN_LATCH  12   // RCLK - en el chip pata 12
-#define PIN_CLOCK  11   // SCLK - en el chip pata 11
+// ── Pines 74HC595 (adaptado a ESP8266 mini) ────────────────────
+// Usar macros Dx (D0..D8) definidas por el core ESP8266
+// Mapado sugerido (puedes cambiar según tu placa):
+//   DATA (DS / MOSI) -> D7 (GPIO13)
+//   CLOCK (SCK)       -> D5 (GPIO14)
+//   LATCH (RCLK)      -> D6 (GPIO12)
+// Evitar D0/D3/D4/D8 si afectan el arranque en tu módulo.
+#define PIN_DATA   D7   // DS - serial data (MOSI)
+#define PIN_LATCH  D6   // RCLK - latch / storage clock
+#define PIN_CLOCK  D5   // SCLK - shift clock
 
 // ── Dimensiones ─────────────────────────────────────────────────
 const uint8_t N_COLS = 4;   // ← cambiar a 4 para escalar a 4×4
