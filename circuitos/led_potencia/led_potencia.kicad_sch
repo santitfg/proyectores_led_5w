@@ -572,6 +572,189 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Connector:Conn_01x02_Socket"
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "J"
+				(at 0 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Conn_01x02_Socket"
+				(at 0 -5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Generic connector, single row, 01x02, script generated"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_locked" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "connector"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "Connector*:*_1x??_*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "Conn_01x02_Socket_1_1"
+				(polyline
+					(pts
+						(xy -1.27 0) (xy -0.508 0)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 -2.54) (xy -0.508 -2.54)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 0 -0.508)
+					(mid -0.5058 0)
+					(end 0 0.508)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 0 -3.048)
+					(mid -0.5058 -2.54)
+					(end 0 -2.032)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at -5.08 0 0)
+					(length 3.81)
+					(name "Pin_1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -2.54 0)
+					(length 3.81)
+					(name "Pin_2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Device:R"
 			(pin_numbers
 				(hide yes)
@@ -2077,6 +2260,12 @@
 		)
 	)
 	(junction
+		(at 44.45 140.97)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "00305845-ef4d-441a-b541-c0c6ff4d690f")
+	)
+	(junction
 		(at 215.9 67.31)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2161,10 +2350,22 @@
 		(uuid "45b4d21e-1182-4534-9fa4-6e0182bc1881")
 	)
 	(junction
+		(at 87.63 140.97)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "46d1376d-8537-4b0b-8994-cee1251fad33")
+	)
+	(junction
 		(at 205.74 48.26)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "48f90474-c4a1-4295-b374-2427921aa3a8")
+	)
+	(junction
+		(at 87.63 82.55)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "4a53f6a5-fabe-441f-bbf4-e386c26c4d32")
 	)
 	(junction
 		(at 193.04 140.97)
@@ -2195,6 +2396,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "5dc7a9e6-b965-483a-868c-e5af601cf56b")
+	)
+	(junction
+		(at 113.03 20.32)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "5e1f0b18-9908-4f8d-9715-ba74f1b4fd67")
 	)
 	(junction
 		(at 190.5 54.61)
@@ -2539,6 +2746,16 @@
 	)
 	(wire
 		(pts
+			(xy 29.21 35.56) (xy 29.21 140.97)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "18b6a649-7df1-4877-a597-92d25c235573")
+	)
+	(wire
+		(pts
 			(xy 134.62 54.61) (xy 177.8 54.61)
 		)
 		(stroke
@@ -2609,6 +2826,16 @@
 	)
 	(wire
 		(pts
+			(xy 29.21 140.97) (xy 44.45 140.97)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "279d0b7e-5a89-425e-a9a3-92fdf85bbc59")
+	)
+	(wire
+		(pts
 			(xy 113.03 54.61) (xy 124.46 54.61)
 		)
 		(stroke
@@ -2626,6 +2853,16 @@
 			(type default)
 		)
 		(uuid "2af7e982-3a96-4884-9e73-5c69fd9d6dd6")
+	)
+	(wire
+		(pts
+			(xy 87.63 82.55) (xy 87.63 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "303d0362-fb5f-4b36-b93a-7b3eebeb7e63")
 	)
 	(wire
 		(pts
@@ -2929,6 +3166,26 @@
 	)
 	(wire
 		(pts
+			(xy 44.45 82.55) (xy 87.63 82.55)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5f6f9b85-b567-44c6-8216-0cd1a0aef73e")
+	)
+	(wire
+		(pts
+			(xy 44.45 107.95) (xy 44.45 140.97)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "61358dc1-b040-413b-a62c-d3e113cfda6c")
+	)
+	(wire
+		(pts
 			(xy 201.93 67.31) (xy 205.74 67.31)
 		)
 		(stroke
@@ -3006,6 +3263,16 @@
 			(type default)
 		)
 		(uuid "6ca9adbf-caa9-415e-864c-27531eb67637")
+	)
+	(wire
+		(pts
+			(xy 82.55 20.32) (xy 113.03 20.32)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "70021f73-9cbe-4599-97f2-0567a4fa918b")
 	)
 	(wire
 		(pts
@@ -3136,6 +3403,16 @@
 			(type default)
 		)
 		(uuid "8530c74b-e8b8-4d51-802a-27b4e68ccf16")
+	)
+	(wire
+		(pts
+			(xy 82.55 35.56) (xy 29.21 35.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "86a3c6c0-5c90-4818-a6e8-67612b31dda7")
 	)
 	(wire
 		(pts
@@ -3569,6 +3846,16 @@
 	)
 	(wire
 		(pts
+			(xy 44.45 140.97) (xy 87.63 140.97)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ccdd40a4-a048-472d-9149-cb59dc420420")
+	)
+	(wire
+		(pts
 			(xy 213.36 63.5) (xy 213.36 60.96)
 		)
 		(stroke
@@ -3679,7 +3966,7 @@
 	)
 	(wire
 		(pts
-			(xy 113.03 8.89) (xy 113.03 29.21)
+			(xy 113.03 8.89) (xy 113.03 20.32)
 		)
 		(stroke
 			(width 0)
@@ -3699,7 +3986,7 @@
 	)
 	(wire
 		(pts
-			(xy 87.63 93.98) (xy 87.63 73.66)
+			(xy 87.63 93.98) (xy 87.63 82.55)
 		)
 		(stroke
 			(width 0)
@@ -3739,6 +4026,16 @@
 	)
 	(wire
 		(pts
+			(xy 113.03 20.32) (xy 113.03 29.21)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ec38792c-0f1b-4e59-9d4f-1b36a3d095d3")
+	)
+	(wire
+		(pts
 			(xy 213.36 54.61) (xy 213.36 50.8)
 		)
 		(stroke
@@ -3756,6 +4053,16 @@
 			(type default)
 		)
 		(uuid "ef48a768-86a6-40fc-b657-94d9e1477739")
+	)
+	(wire
+		(pts
+			(xy 44.45 105.41) (xy 44.45 82.55)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "efcfdccf-0cec-4e09-9386-fe8327cdd82c")
 	)
 	(wire
 		(pts
@@ -3786,6 +4093,16 @@
 			(type default)
 		)
 		(uuid "f3ca145e-faee-4547-be1e-4d5f186ad489")
+	)
+	(wire
+		(pts
+			(xy 82.55 33.02) (xy 82.55 20.32)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f4145fe0-1dc2-4922-8d16-4436052b4217")
 	)
 	(wire
 		(pts
@@ -5112,6 +5429,88 @@
 			(project "led_potencia"
 				(path "/f9546c60-e06e-4d9b-9eb6-79a4ed645b82"
 					(reference "puente6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:Conn_01x02_Socket")
+		(at 87.63 33.02 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "3d827d4a-a5c3-45ab-9dd2-55297131fb53")
+		(property "Reference" "J17"
+			(at 88.9 33.0199 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Conn_01x02_Socket"
+			(at 88.9 35.5599 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Connector_Molex:Molex_KK-254_AE-6410-02A_1x02_P2.54mm_Vertical"
+			(at 87.63 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 87.63 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x02, script generated"
+			(at 87.63 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "efef5c35-95b5-4ffb-ac76-3b4e0d1a1410")
+		)
+		(pin "1"
+			(uuid "46eda5bb-d606-43d0-ad98-4f70f2953157")
+		)
+		(instances
+			(project "led_potencia"
+				(path "/f9546c60-e06e-4d9b-9eb6-79a4ed645b82"
+					(reference "J17")
 					(unit 1)
 				)
 			)
@@ -7759,6 +8158,88 @@
 			(project "led_potencia"
 				(path "/f9546c60-e06e-4d9b-9eb6-79a4ed645b82"
 					(reference "puente5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:Conn_01x02_Socket")
+		(at 49.53 105.41 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a7e5c00a-6dfd-4084-8db9-320f7e2389db")
+		(property "Reference" "J18"
+			(at 50.8 105.4099 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Conn_01x02_Socket"
+			(at 50.8 107.9499 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Connector_Molex:Molex_KK-254_AE-6410-02A_1x02_P2.54mm_Vertical"
+			(at 49.53 105.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 49.53 105.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x02, script generated"
+			(at 49.53 105.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "3c9f8219-41f0-41fe-8750-9505e2f0edcf")
+		)
+		(pin "1"
+			(uuid "9c5673db-8979-4664-bc21-e15801699f95")
+		)
+		(instances
+			(project "led_potencia"
+				(path "/f9546c60-e06e-4d9b-9eb6-79a4ed645b82"
+					(reference "J18")
 					(unit 1)
 				)
 			)
