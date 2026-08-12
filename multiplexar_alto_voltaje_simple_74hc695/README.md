@@ -22,8 +22,8 @@ Actualmente configurado en **2×2**, escalable a **4×4** cambiando dos constant
 | Arduino | Pin 74HC595 | Señal |
 |---------|-------------|-------|
 | D11 | 14 (DS) | Serial data |
-| D13 | 11 (SHCP) | Shift clock |
-| D10 | 12 (STCP) | Latch / storage clock |
+| D13 | 11 (SCLK) | Shift clock |
+| D10 | 12 (RCLK) | Latch / storage clock |
 | VCC | 16 (VCC) | Alimentación |
 | GND | 8 (GND) | Tierra |
 | GND | 13 (OE) | Output enable (activo bajo) |
