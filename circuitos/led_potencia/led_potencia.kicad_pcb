@@ -2484,7 +2484,7 @@
 			)
 		)
 		(property "Value" "Conn_01x05_IN"
-			(at 5.08 -4.08 -90)
+			(at 5.08 -4.08 270)
 			(layer "F.Fab")
 			(uuid "7dc10a31-59fe-419e-bb5f-9efb101988dc")
 			(effects
@@ -9340,7 +9340,7 @@
 			)
 		)
 		(property "Value" "Conn_01x05_OUT"
-			(at 5.08 -4.08 -90)
+			(at 5.08 -4.08 270)
 			(layer "F.Fab")
 			(uuid "72dc81b1-298c-4e1f-b331-fc784406f956")
 			(effects
@@ -16281,6 +16281,18 @@
 		(fill no)
 		(layer "Edge.Cuts")
 		(uuid "60ff987c-cb87-4773-8bec-aa137cb3e0e4")
+	)
+	(gr_text "INVERTIR PISTAS DE VIN Y DE VCCGND YA QUE ESTAN EsPEJADAS"
+		(at 122.5296 30.607 0)
+		(layer "User.1")
+		(uuid "b4d6356b-c712-4084-a88b-8d6c532d973d")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+			(justify left bottom)
+		)
 	)
 	(segment
 		(start 73.2978 47.2854)
