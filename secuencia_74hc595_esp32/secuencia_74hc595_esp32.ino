@@ -1,7 +1,18 @@
 /*
- * Secuencia de compuertas Q0..Q7 de un 74HC595 — ESP32 / ESP32-S3
+ * Test de hardware — filas y columnas del 74HC595 — ESP32 / ESP32-S3
  *
- * Enciende y apaga todas las salidas del 74HC595 a la vez.
+ * Alterna dos estados complementarios para verificar ambos drivers de
+ * compuerta:
+ *   - Q0..Q3 → base de 2N2222 → gate de IRF9630 (canal P, filas, lado alto)
+ *   - Q4..Q7 → gate directo de IRLZ44N (canal N, columnas, lado bajo)
+ *
+ * El 2N2222 invierte la señal para el IRF9630 (gate a masa = MOSFET
+ * conduce), y esa inversión se cancela con la inversión propia del canal P
+ * (gate en bajo = conduce), así que a nivel de bit enviado al 595 ambos
+ * grupos usan la misma convención: 1 = salida activa.
+ *
+ * Estado A: filas activas (0x0F) / columnas apagadas
+ * Estado B: columnas activas (0xF0) / filas apagadas  (0xF0 = ~0x0F)
  *
  * ── Conexión 74HC595 (Conector 1, ver README.md del proyecto) ──
  *              Señal        ESP32     ESP32-S3
@@ -34,6 +45,10 @@
   #define PIN_Q7    35   // Cascade out (Q7')
 #endif
 
+// Q0..Q3 → filas (2N2222 + IRF9630) | Q4..Q7 → columnas (IRLZ44N directo)
+#define ROWS_MASK 0xFF
+#define COLS_MASK 0x00   // == (uint8_t)~ROWS_MASK
+
 // ────────────────────────────────────────────────────────────────
 // Envía un byte al 74HC595 y actualiza el latch
 // ────────────────────────────────────────────────────────────────
@@ -52,17 +67,21 @@ void setup() {
 
   sendToShiftReg(0x00);  // todas las salidas apagadas
 
-  Serial.println(F("== Secuencia Q0..Q7 74HC595 =="));
+  Serial.println(F("== Test hardware: filas (Q0-3) vs columnas (Q4-7) =="));
 }
 
 void loop() {
-  sendToShiftReg(0xFF);   // enciende Q0..Q7
-  Serial.print(F("ALL ON  | Q7' cascada="));
+  sendToShiftReg(ROWS_MASK);   // filas ON (IRF9630), columnas OFF (IRLZ44N)
+  Serial.print(F("FILAS ON  / COLUMNAS OFF | byte=0x"));
+  Serial.print(ROWS_MASK, HEX);
+  Serial.print(F(" | Q7' cascada="));
   Serial.println(digitalRead(PIN_Q7));
-  delay(2000);
+  delay(1000);
 
-  sendToShiftReg(0x00);   // apaga Q0..Q7
-  Serial.print(F("ALL OFF | Q7' cascada="));
+  sendToShiftReg(COLS_MASK);   // filas OFF, columnas ON — patrón invertido
+  Serial.print(F("FILAS OFF / COLUMNAS ON  | byte=0x"));
+  Serial.print(COLS_MASK, HEX);
+  Serial.print(F(" | Q7' cascada="));
   Serial.println(digitalRead(PIN_Q7));
   delay(1000);
 }

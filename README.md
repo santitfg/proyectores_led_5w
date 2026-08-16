@@ -21,3 +21,47 @@ Conector para encadenar el `SER` (pin 14) del siguiente 74HC595 a la salida en c
 | 3   | 🟢 Verde  | RCLK  / PL | `gpio22`   | `gpio10`      | Register Clock / Latch (ST_CP, pin 12) |
 | 4   | 🩶 Gris   | Q7   | `gpio35`   | `gpio5`       | Salida en cascada (Q7', pin 9) hacia el `SER` del siguiente 74HC595 |
 | 5   | 🔴 Rojo   | VCC   | —          | —             | Alimentación |
+
+estoy controlando con el 74hc595 la matriz desde las siguientes filas y columnas:
+Q0 ... Q3 se conectan a los 2n2222 controlanto el gate de IRF9630
+Q4 ... Q7 se conectan directo al gate IRLZ44N
+
+
+# revision de laburo
+
+
+PCB
+
+si conecto la entrada de V5/V12 y la entrada de v5/V3.3 aka VCC no hay diferencia en las salidas
+esta clavado a 4.4V
+si desconecto la de VCC oscila entre 4.4 y 4.8 
+
+revisar 2n2222 (resis erroneas en el diagrama o en la pcb posible causa)
+IRF9630 high side
+IRLZ44N	low side
+
+algo en el circuito esta interfiriendo con los 2n2222 al conectar vcc en el in que pareciera al pedo por que estoy alimentdolo desde la cadena! ( omitir en la v2)
+
+
+REVISAR PULLDOWN Y PULL UPs 
+
+IRF9630 high side y esta a up down en gate
+IRLZ44N	low side y esta a pull down en gate
+
+————
+
+revision en protoboard 5v y señales activas de irlz44n y 2n2222 a 3.3:
+IRLZ44N
+gate ( pin 1) 10k a pull Down 1k a señal (vcc activa el paso de corriente)
+drain ( pin 2) a gnd-terminal
+source (pin 3) a GND
+
+IRF9630
+gate ( pin 1) 10k a pull up 1k a señal (gnd activa el paso de corriente)(2n2222)
+drain ( pin 2) a Vout-terminal
+source (pin 3) a GND
+
+2n2222
+emisor (pin 1)( señal hacia irf9630 via 1k resi) vcc activa el paso de corriente)
+base (pin 2) señal ic ( via 1k Resi)
+colector (pin 3) a GND
