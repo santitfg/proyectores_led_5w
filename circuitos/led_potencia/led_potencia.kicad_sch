@@ -2563,7 +2563,7 @@
 			(embedded_fonts no)
 		)
 	)
-	(text "\nrevision en protoboard 5v y señales activas de irlz44n y 2n2222 a 3.3:\nIRLZ44N\ngate ( pin 1) 10k a pull Down 1k a señal (vcc activa el paso de corriente)\ndrain ( pin 2) a gnd-terminal\nsource (pin 3) a GND\n\nIRF9630\ngate ( pin 1) 10k a pull up 1k a señal (gnd activa el paso de corriente)(2n2222)\ndrain ( pin 2) a Vout-terminal\nsource (pin 3) a VIN\n\n2n2222\nemisor (pin 1)( señal hacia irf9630 via 1k resi) vcc activa el paso de corriente)\nbase (pin 2) señal ic ( via 1k Resi)\ncolector (pin 3) a GND"
+	(text "\nrevision en protoboard 5v y señales activas de irlz44n y 2n2222 a 3.3:\nIRLZ44N\ngate ( pin 1) 10k a pull Down 1k a señal (vcc activa el paso de corriente)\ndrain ( pin 2) a gnd-terminal\nsource (pin 3) a GND\n\nIRF9630\ngate ( pin 1) 10k a pull up 1k a señal (gnd activa el paso de corriente)(2n2222)\ndrain ( pin 2) a Vout-terminal\nsource (pin 3) a VIN\n\n2n2222\nemisor (pin 1)a GND \nbase (pin 2) señal ic ( via 1k Resi)\ncolector (pin 3) a  señal hacia irf9630 (via 1k resi idealmente) vcc activa el paso de corriente)"
 		(exclude_from_sim no)
 		(at 20.574 17.272 0)
 		(effects
@@ -2584,16 +2584,6 @@
 			)
 		)
 		(uuid "1f117eaa-ab8d-4dd1-a262-5033a78bee4b")
-	)
-	(text "INVERTIR EN LA PCB LOS IRF Y LOS 2n2222\n"
-		(exclude_from_sim no)
-		(at 147.32 22.606 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "7db512de-070d-4222-bc8c-2c955edfc3f1")
 	)
 	(text "agregar 1k Resis"
 		(exclude_from_sim no)
@@ -4932,7 +4922,8 @@
 	)
 	(symbol
 		(lib_id "Transistor_FET:IRF4905")
-		(at 132.08 57.15 90)
+		(at 132.08 57.15 270)
+		(mirror x)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -4940,10 +4931,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "1599bb52-7ce9-43bb-811c-902caabc9c79")
 		(property "Reference" "Q19"
-			(at 130.8099 50.8 0)
+			(at 133.3501 50.8 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4954,7 +4944,7 @@
 			)
 		)
 		(property "Value" "IRF4905"
-			(at 133.3499 50.8 0)
+			(at 130.8101 50.8 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4965,7 +4955,7 @@
 			)
 		)
 		(property "Footprint" "Package_TO_SOT_THT:TO-220-3_Vertical"
-			(at 133.985 52.07 0)
+			(at 130.175 52.07 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4978,7 +4968,7 @@
 			)
 		)
 		(property "Datasheet" "http://www.infineon.com/dgdl/irf4905.pdf?fileId=5546d462533600a4015355e32165197c"
-			(at 135.89 52.07 0)
+			(at 128.27 52.07 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5101,7 +5091,8 @@
 	)
 	(symbol
 		(lib_id "Transistor_FET:IRF4905")
-		(at 133.35 76.2 90)
+		(at 133.35 76.2 270)
+		(mirror x)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -5111,7 +5102,7 @@
 		(dnp no)
 		(uuid "179f1672-145e-444a-9c4b-7371cc930a3e")
 		(property "Reference" "Q20"
-			(at 140.9699 69.85 0)
+			(at 125.7301 69.85 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5122,7 +5113,7 @@
 			)
 		)
 		(property "Value" "IRF4905"
-			(at 143.5099 69.85 0)
+			(at 123.1901 69.85 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5133,7 +5124,7 @@
 			)
 		)
 		(property "Footprint" "Package_TO_SOT_THT:TO-220-3_Vertical"
-			(at 135.255 71.12 0)
+			(at 131.445 71.12 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5146,7 +5137,7 @@
 			)
 		)
 		(property "Datasheet" "http://www.infineon.com/dgdl/irf4905.pdf?fileId=5546d462533600a4015355e32165197c"
-			(at 137.16 71.12 0)
+			(at 129.54 71.12 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5510,7 +5501,8 @@
 	)
 	(symbol
 		(lib_id "Transistor_FET:IRF4905")
-		(at 128.27 93.98 90)
+		(at 128.27 93.98 270)
+		(mirror x)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -5518,10 +5510,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "24897757-76d3-4f59-b562-3110405a3f3d")
 		(property "Reference" "Q24"
-			(at 126.9999 87.63 0)
+			(at 129.5401 87.63 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5532,7 +5523,7 @@
 			)
 		)
 		(property "Value" "IRF4905"
-			(at 129.5399 87.63 0)
+			(at 127.0001 87.63 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5543,7 +5534,7 @@
 			)
 		)
 		(property "Footprint" "Package_TO_SOT_THT:TO-220-3_Vertical"
-			(at 130.175 88.9 0)
+			(at 126.365 88.9 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5556,7 +5547,7 @@
 			)
 		)
 		(property "Datasheet" "http://www.infineon.com/dgdl/irf4905.pdf?fileId=5546d462533600a4015355e32165197c"
-			(at 132.08 88.9 0)
+			(at 124.46 88.9 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5598,7 +5589,8 @@
 	)
 	(symbol
 		(lib_id "Transistor_FET:IRF4905")
-		(at 123.19 31.75 90)
+		(at 123.19 31.75 270)
+		(mirror x)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -5606,10 +5598,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "26d194cc-6e01-48ab-8366-15b4f168554e")
 		(property "Reference" "Q18"
-			(at 121.9199 25.4 0)
+			(at 124.4601 25.4 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5620,7 +5611,7 @@
 			)
 		)
 		(property "Value" "IRF4905"
-			(at 124.4599 25.4 0)
+			(at 121.9201 25.4 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5631,7 +5622,7 @@
 			)
 		)
 		(property "Footprint" "Package_TO_SOT_THT:TO-220-3_Vertical"
-			(at 125.095 26.67 0)
+			(at 121.285 26.67 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5644,7 +5635,7 @@
 			)
 		)
 		(property "Datasheet" "http://www.infineon.com/dgdl/irf4905.pdf?fileId=5546d462533600a4015355e32165197c"
-			(at 127 26.67 0)
+			(at 119.38 26.67 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)

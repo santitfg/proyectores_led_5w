@@ -59,9 +59,41 @@ source (pin 3) a GND
 IRF9630
 gate ( pin 1) 10k a pull up 1k a señal (gnd activa el paso de corriente)(2n2222)
 drain ( pin 2) a Vout-terminal
-source (pin 3) a GND
+source (pin 3) a VIN
 
-2n2222
-emisor (pin 1)( señal hacia irf9630 via 1k resi) vcc activa el paso de corriente)
+2n2222 ( funcionamiento real es emisor a gnd y colector lado vcc)
+emisor (pin 1) a GND
 base (pin 2) señal ic ( via 1k Resi)
-colector (pin 3) a GND
+colector (pin 3) ( señal hacia irf9630 via 1k resi) vcc activa el paso de corriente)x
+
+TODO: arreglar kicad corrigiendo los elementos mencionados (inverti pista VIN x Vout-terminal)
+
+Fallas en el circuito funciona la mitad de puntos en modo damero
+O X O X
+X O X O 
+O X O X
+X O X O
+
+Nomenclar correstamente las columnas y filas 
+pero los v y gnd en los mismos no todos fallan de la misma manera
+1: 2: 3: 4: 
+
+
+
+Filas
+q0 (pin 15) : IRF9630 1
+q1 (pin 1) : IRF9630 2
+q2 (pin 2) : IRF9630 3
+q3 (pin 3) : IRF9630 4
+
+Columnas
+q4 (pin 4) : IRLZ44N 1
+q5 (pin 5) : IRLZ44N 2
+q6 (pin 6) : IRLZ44N 3
+q7 (pin 7) : IRLZ44N 4
+
+.   q4  q3  q2  q1
+q3  4   3   2   1
+q2  8   7   6   5
+q1  12  11  10  9
+q0  16  15  14  13     

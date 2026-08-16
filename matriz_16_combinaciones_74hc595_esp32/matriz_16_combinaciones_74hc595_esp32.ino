@@ -1,14 +1,17 @@
 /*
- * Test de hardware — filas y columnas del 74HC595 — ESP32 / ESP32-S3
+ * Test de hardware — barrido de las 16 combinaciones fila×columna — ESP32 / ESP32-S3
  *
- * Alterna dos estados complementarios para verificar ambos drivers de
- * compuerta:
+ * Recorre las 4 filas × 4 columnas (16 combinaciones), encendiendo una
+ * fila y una columna a la vez para verificar cada cruce de la matriz:
  *   - Q0..Q3 → base de 2N2222 → gate de IRF9630 (canal P, filas, lado alto)
  *   - Q4..Q7 → gate directo de IRLZ44N (canal N, columnas, lado bajo)
  *
- 
- * Estado A: filas activas (0x0F) / columnas apagadas
- * Estado B: columnas activas (0xF0) / filas apagadas  (0xF0 = ~0x0F)
+ * En ambos casos la señal es ALTA para habilitar el paso de corriente:
+ *   - Filas (IRF9630, high side): el 2N2222 invierte la señal, por lo
+ *     que un "1" en Q0..Q3 satura el 2N2222, que a su vez tira el gate
+ *     del IRF9630 a GND y lo enciende.
+ *   - Columnas (IRLZ44N, low side): un "1" en Q4..Q7 lleva el gate
+ *     directo a VCC y lo enciende.
  *
  * ── Conexión 74HC595 (Conector 1, ver README.md del proyecto) ──
  *              Señal        ESP32     ESP32-S3
@@ -42,8 +45,8 @@
 #endif
 
 // Q0..Q3 → filas (2N2222 + IRF9630) | Q4..Q7 → columnas (IRLZ44N directo)
-#define ROWS_MASK 0x0F
-#define COLS_MASK 0xF0   // == (uint8_t)~ROWS_MASK
+#define N_ROWS 4
+#define N_COLS 4
 
 // ────────────────────────────────────────────────────────────────
 // Envía un byte al 74HC595 y actualiza el latch
@@ -63,21 +66,25 @@ void setup() {
 
   sendToShiftReg(0x00);  // todas las salidas apagadas
 
-  Serial.println(F("== Test hardware: filas (Q0-3) vs columnas (Q4-7) =="));
+  Serial.println(F("== Test hardware: barrido de las 16 combinaciones fila x columna =="));
 }
 
 void loop() {
-  sendToShiftReg(ROWS_MASK);   // filas ON (IRF9630), columnas OFF (IRLZ44N)
-  Serial.print(F("FILAS ON  / COLUMNAS OFF | byte=0x"));
-  Serial.print(ROWS_MASK, HEX);
-  Serial.print(F(" | Q7' cascada="));
-  Serial.println(digitalRead(PIN_Q7));
-  delay(1000);
+  for (uint8_t row = 0; row < N_ROWS; row++) {
+    for (uint8_t col = 0; col < N_COLS; col++) {
+      uint8_t out = (uint8_t)(1 << row) | (uint8_t)(1 << (N_ROWS + col));
+      sendToShiftReg(out);
 
-  sendToShiftReg(COLS_MASK);   // filas OFF, columnas ON — patrón invertido
-  Serial.print(F("FILAS OFF / COLUMNAS ON  | byte=0x"));
-  Serial.print(COLS_MASK, HEX);
-  Serial.print(F(" | Q7' cascada="));
-  Serial.println(digitalRead(PIN_Q7));
-  delay(1000);
+      Serial.print(F("FILA "));
+      Serial.print(row);
+      Serial.print(F(" / COLUMNA "));
+      Serial.print(col);
+      Serial.print(F(" | byte=0x"));
+      Serial.print(out, HEX);
+      Serial.print(F(" | Q7' cascada="));
+      Serial.println(digitalRead(PIN_Q7));
+
+      delay(500);
+    }
+  }
 }
