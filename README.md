@@ -32,19 +32,6 @@ Q4 ... Q7 se conectan directo al gate IRLZ44N
 
 PCB
 
-si conecto la entrada de V5/V12 y la entrada de v5/V3.3 aka VCC no hay diferencia en las salidas
-esta clavado a 4.4V
-si desconecto la de VCC oscila entre 4.4 y 4.8 
-
-revisar 2n2222 (resis erroneas en el diagrama o en la pcb posible causa)
-IRF9630 high side
-IRLZ44N	low side
-
-algo en el circuito esta interfiriendo con los 2n2222 al conectar vcc en el in que pareciera al pedo por que estoy alimentdolo desde la cadena! ( omitir en la v2)
-
-
-REVISAR PULLDOWN Y PULL UPs 
-
 IRF9630 high side y esta a up down en gate
 IRLZ44N	low side y esta a pull down en gate
 
@@ -97,3 +84,5 @@ q3  4   3   2   1
 q2  8   7   6   5
 q1  12  11  10  9
 q0  16  15  14  13     
+
+funciona raro al enviar 0xFF se apagan las salidas y al 0x00 se prenden

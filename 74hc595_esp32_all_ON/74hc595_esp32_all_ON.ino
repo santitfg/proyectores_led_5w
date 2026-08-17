@@ -41,9 +41,7 @@
   #define PIN_Q7    35   // Cascade out (Q7')
 #endif
 
-// Q0..Q3 → filas (2N2222 + IRF9630) | Q4..Q7 → columnas (IRLZ44N directo)
-#define ROWS_MASK 0x0F
-#define COLS_MASK 0xF0   // == (uint8_t)~ROWS_MASK
+
 
 // ────────────────────────────────────────────────────────────────
 // Envía un byte al 74HC595 y actualiza el latch
@@ -66,18 +64,15 @@ void setup() {
   Serial.println(F("== Test hardware: filas (Q0-3) vs columnas (Q4-7) =="));
 }
 
-void loop() {
-  sendToShiftReg(B00000000);   // filas ON (IRF9630), columnas OFF (IRLZ44N)
-  Serial.print(F("FILAS ON  / COLUMNAS OFF | byte=0x"));
-  Serial.print(ROWS_MASK, HEX);
-  Serial.print(F(" | Q7' cascada="));
-  Serial.println(digitalRead(PIN_Q7));
-  delay(1000);
+const unsigned long ON_MS  = 10000;  // tiempo con todo encendido
+const unsigned long OFF_MS = 10000;   // tiempo de descanso apagado
 
-  sendToShiftReg(B11111111);   // filas OFF, columnas ON — patrón invertido
-  Serial.print(F("FILAS OFF / COLUMNAS ON  | byte=0x"));
-  Serial.print(COLS_MASK, HEX);
-  Serial.print(F(" | Q7' cascada="));
-  Serial.println(digitalRead(PIN_Q7));
-  delay(1000);
+void loop() {
+  sendToShiftReg(0x00);
+  Serial.println(F("byte=0x00 -> todas las filas y columnas ON"));
+  delay(ON_MS);
+
+  sendToShiftReg(0xFF);
+  Serial.println(F("byte=0xFF -> todo OFF"));
+  delay(OFF_MS);
 }
