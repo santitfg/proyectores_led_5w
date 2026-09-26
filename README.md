@@ -1,3 +1,10 @@
+
+
+# redo
+en el 74hc595 el pin 10 (rst ) si o si a vcc
+y el pin 13 output enable va a gng si o si 
+
+
 ### Conector 1 — entrada de datos serie (SER)
 
 Chip: 74HC595 (registro de desplazamiento serie-in / paralelo-out). Molex 5 pines.
