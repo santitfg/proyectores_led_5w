@@ -6877,7 +6877,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b4d7ea7a-78f7-44e5-898c-ece6f9ca8f7e")
-		(property "Reference" "puente"
+		(property "Reference" "puente1"
 			(at 96.52 140.9699 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6963,7 +6963,7 @@
 		(instances
 			(project "led_potencia"
 				(path "/f9546c60-e06e-4d9b-9eb6-79a4ed645b82"
-					(reference "puente")
+					(reference "puente1")
 					(unit 1)
 				)
 			)
